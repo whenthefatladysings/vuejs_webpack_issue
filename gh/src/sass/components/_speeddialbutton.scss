@@ -1,0 +1,91 @@
+/* Speed dial */
+
+.mdl-speed-dial {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 16px;
+  right: 16px;
+  -webkit-flex-flow: column-reverse nowrap;
+  -ms-flex-flow: column-reverse nowrap;
+  flex-flow: column-reverse nowrap;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 999;
+  position: fixed;
+}
+
+.mdl-speed-dial .mdl-button--fab:first-child .material-icons:not(:only-child),
+.mdl-speed-dial .mdl-button--mini-fab {
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+}
+
+.mdl-speed-dial .mdl-button--fab:first-child .material-icons:not(:only-child),
+.mdl-speed-dial .mdl-button--mini-fab {
+  transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  will-change: transform, opacity;
+}
+
+.mdl-speed-dial.is-active .mdl-button--fab:first-child .material-icons:first-child,
+.mdl-speed-dial .mdl-button--fab:first-child .material-icons:nth-child(2) {
+  opacity: 0;
+}
+
+.mdl-speed-dial.is-active .mdl-button--fab:first-child .material-icons:first-child {
+  transform: rotate(90deg) translate(-12px, 12px);
+}
+
+.mdl-speed-dial .mdl-button--fab:first-child .material-icons:nth-child(2) {
+  transform: rotate(-90deg);
+  top: 16px;
+  left: 16px;
+}
+
+.mdl-speed-dial.is-active .mdl-button--fab:first-child .material-icons:nth-child(2) {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Mini floating buttons */
+
+.mdl-speed-dial .mdl-button--mini-fab {
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  margin-bottom: 16px;
+}
+
+.mdl-speed-dial.is-active .mdl-button--mini-fab {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+/* Mini floating buttons animations */
+
+.mdl-speed-dial .mdl-button--mini-fab:nth-of-type(6),
+.mdl-speed-dial.is-active .mdl-button--mini-fab:nth-of-type(2) {
+  transition-delay: 20ms;
+}
+
+.mdl-speed-dial .mdl-button--mini-fab:nth-of-type(5),
+.mdl-speed-dial.is-active .mdl-button--mini-fab:nth-of-type(3) {
+  transition-delay: 70ms;
+}
+
+.mdl-speed-dial .mdl-button--mini-fab:nth-of-type(4) {
+  transition-delay: 140ms;
+}
+
+.mdl-speed-dial .mdl-button--mini-fab:nth-of-type(3),
+.mdl-speed-dial.is-active .mdl-button--mini-fab:nth-of-type(5) {
+  transition-delay: 210ms;
+}
+
+.mdl-speed-dial .mdl-button--mini-fab:nth-of-type(2),
+.mdl-speed-dial.is-active .mdl-button--mini-fab:nth-of-type(6) {
+  transition-delay: 280ms;
+}
